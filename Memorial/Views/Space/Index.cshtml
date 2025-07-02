@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Memorial.Core.Domain.Space>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Remark</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var space in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(space.Name, "Items", new { spaceId = space.Id })</td>
+                <td>@space.Description</td>
+                <td>@space.Remark</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

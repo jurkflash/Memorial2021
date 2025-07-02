@@ -1,0 +1,48 @@
+﻿@model Memorial.ViewModels.OrderReceiptsViewModel
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Order</h2>
+
+Invoice : @Model.InvoiceDto.IV
+<br />
+Amount : @Model.InvoiceDto.Amount
+
+@if (!Model.InvoiceDto.isPaid)
+{
+    <p>
+        @Html.ActionLink("New", "OrderForm", new { IV = Model.InvoiceDto.IV })
+    </p>
+}
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Receipt</th>
+            <th>Amount</th>
+            <th>Remark</th>
+            <th>Payment Method</th>
+            <th>Payment Remark</th>
+            <th>Create Date</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var receipt in Model.ReceiptDtos)
+        {
+        <tr>
+            <td>@receipt.RE</td>
+            <td>@receipt.Amount</td>
+            <td>@receipt.Remark</td>
+            <td>@receipt.PaymentMethod.Name</td>
+            <td>@receipt.PaymentRemark</td>
+            <td>@receipt.CreateDate.ToString("yyyy-MM-dd HH:mm")</td>
+            <td>@Html.ActionLink("Delete", "DeleteOrderReceipt", new { RE = receipt.RE, IV = Model.InvoiceDto.IV })</td>
+        </tr>
+        }
+    </tbody>
+</table>
+

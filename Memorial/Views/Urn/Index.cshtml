@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Memorial.Core.Domain.Urn>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Remark</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(urn.Name, "Items", new { urnId = urn.Id })</td>
+                <td>@urn.Description</td>
+                <td>@urn.Remark</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,88 @@
+## Ignore Visual Studio temporary files, build results, and
+## user-specific files
+
+# Build Folders (bin, obj, etc)
+**/bin/
+**/obj/
+**/out/
+**/Debug/
+**/Release/
+
+# NuGet Packages
+**/packages/
+*.nupkg
+# Uncomment if using package restore
+# !**/packages/build/
+# !**/packages/repositories.config
+
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.sdf
+*.cache
+*.dbmdl
+
+# Rider
+.idea/
+
+# ASP.NET Specific
+**/App_Data/
+**/App_Start/BundleConfig.cs
+**/App_Start/RouteConfig.cs
+
+# Publish artifacts
+**/publish/
+*.Publish.xml
+
+# Logs
+*.log
+
+# Others
+*.tmp
+*.bak
+*.swp
+*.orig
+
+# Web.config transforms
+Web.Debug.config
+Web.Release.config
+
+# IIS Express
+.vsconfig
+*.vspscc
+*.vssscc
+*.userprefs
+/.vs/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# dotCover
+*.dotCover
+
+# TFS
+$tf/
+
+# JetBrains Rider
+.idea/
+
+# Local History
+.localhistory/
+
+# Node/npm (if frontend assets are included)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# dotenv
+.env
+.env.*
+
+# Optional: Git ignore for secrets
+secrets.json

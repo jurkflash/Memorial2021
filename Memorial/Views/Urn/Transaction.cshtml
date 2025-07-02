@@ -1,0 +1,17 @@
+﻿@model Memorial.ViewModels.ListUrnTransactionViewModel
+@{
+    ViewBag.Title = "Transaction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Transaction</h2>
+
+<p>
+    @Html.ActionLink("New", "New", new { itemId = Model.UrnItem.Id })
+</p>
+
+@foreach (var urnTransaction in Model.UrnTransactions)
+{
+    //@Html.ActionLink(urnTransaction.Name, "Catalog", new { id = urnTransaction.Id })
+    <br />
+}

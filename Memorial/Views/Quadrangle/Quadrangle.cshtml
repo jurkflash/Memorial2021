@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Memorial.Core.Domain.Quadrangle>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quadrangle</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Maintenance</th>
+            <th>LifeTimeMaintenance</th>
+            <th>Remark</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var quadrangle in Model)
+        {
+        <tr>
+            <td>@Html.ActionLink(quadrangle.Name, "Items", new { quadrangleId = quadrangle.Id, quadrangleAreaId = quadrangle.QuadrangleAreaId })</td>
+            <td>@quadrangle.Description</td>
+            <td>@quadrangle.Price</td>
+            <td>@quadrangle.Maintenance</td>
+            <td>@quadrangle.LifeTimeMaintenance</td>
+            <td>@quadrangle.Remark</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+

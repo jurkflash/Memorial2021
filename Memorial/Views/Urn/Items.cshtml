@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Memorial.Core.Domain.UrnItem>
+@{
+    ViewBag.Title = "Items";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Items</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urnItem in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(urnItem.Name, "Item", new { item = urnItem.SystemCode, urnItemId = urnItem.Id })</td>
+                <td>@urnItem.Description</td>
+                <td>@urnItem.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>

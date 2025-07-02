@@ -1,0 +1,52 @@
+﻿@model Memorial.ViewModels.CremationNewNonOrderReceiptFormViewModel
+@{
+    ViewBag.Title = "NonOrderNew";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NonOrderNew</h2>
+
+@using (Html.BeginForm("SaveNonOrder", "CremationReceipts"))
+{
+    <div class="form-group row">
+        <div class="col-md-3">
+            Amount
+        </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(r => r.ReceiptDto.Amount, new { @class = "form-control" })
+            @Html.ValidationMessageFor(r => r.ReceiptDto.Amount)
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            Payment Method
+        </div>
+        <div class="col-md-6">
+            @Html.DropDownListFor(r => r.ReceiptDto.PaymentMethodId, new SelectList(Model.PaymentMethods, "Id", "Name"), "Please Select", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            Payment Remark
+        </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(r => r.ReceiptDto.PaymentRemark, new { @class = "form-control" })
+            @Html.ValidationMessageFor(r => r.ReceiptDto.PaymentRemark)
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            Remark
+        </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(r => r.ReceiptDto.Remark, new { @class = "form-control" })
+            @Html.ValidationMessageFor(r => r.ReceiptDto.Remark)
+        </div>
+    </div>
+
+    @Html.HiddenFor(r => r.ReceiptDto.RE)
+    @Html.HiddenFor(r => r.CremationTransactionDto.AF)
+    @Html.HiddenFor(r => r.CremationTransactionDto.Price)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+

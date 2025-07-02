@@ -1,0 +1,40 @@
+﻿@model Memorial.Core.Domain.Applicant
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Applicant</h2>
+
+@using (Html.BeginForm("Create", "Applicants"))
+{
+    <div class="form-group">
+        @Html.LabelFor(a => a.IC)
+        @Html.TextBoxFor(a => a.IC, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Name)
+        @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Name2)
+        @Html.TextBoxFor(a => a.Name2, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Address)
+        @Html.TextAreaFor(a => a.Address, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.HousePhone)
+        @Html.TextBoxFor(a => a.HousePhone, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.MobileNumber)
+        @Html.TextBoxFor(a => a.MobileNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Remark)
+        @Html.TextAreaFor(a => a.Remark, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+}
